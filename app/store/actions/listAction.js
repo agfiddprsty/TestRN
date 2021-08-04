@@ -20,17 +20,11 @@ export const getList = () => async dispatch => {
 
 export const addPost = body => async dispatch => {
   try {
-    const result = await axios.post(
-      url,
-      {
-        body: JSON.stringify(body),
+    const result = await axios.post(url, body, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF8',
       },
-      {
-        headers: {
-          'Content-Type': 'application/json; charset=UTF8',
-        },
-      },
-    );
+    });
     dispatch({
       type: POST_SUCCESS,
       payload: result,

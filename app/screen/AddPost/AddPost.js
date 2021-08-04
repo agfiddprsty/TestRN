@@ -10,13 +10,13 @@ const AddNewPost = ({navigation}) => {
   const [desc, setDesc] = useState('');
 
   const onClickPost = () => {
-    dispatch(
-      addPost({
-        title: title,
-        body: desc,
-        userId: 1,
-      }),
-    );
+    const body = {
+      userId: 1,
+      title,
+      body: desc,
+    };
+
+    dispatch(addPost(body));
     navigation.goBack();
     setTitle('');
     setDesc('');

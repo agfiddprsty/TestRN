@@ -13,8 +13,6 @@ const Post = ({navigation}) => {
 
   useEffect(() => {
     dispatch(getList());
-    console.log(list.loading);
-    console.log(list);
   }, []);
 
   return (
