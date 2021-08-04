@@ -38,7 +38,6 @@ const ModalAddTask = props => {
   };
 
   useEffect(() => {
-    console.log(props);
     setVisible(props.visible);
   }, [props]);
 
